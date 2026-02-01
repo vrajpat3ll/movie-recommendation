@@ -1,0 +1,20 @@
+[project]
+name = "movie-recommender"
+version = "0.1.0"
+description = "A movie recommendation system"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.32.5",
+    "rich>=14.3.1",
+]
+
+[dependency-groups]
+dev = [
+    "taskipy>=1.14.1",
+]
+
+[tool.taskipy.tasks]
+check = "ruff check"
+fmt = "ruff format"
+lint = "task fmt && task check"
