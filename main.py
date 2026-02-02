@@ -5,7 +5,7 @@ from contextlib import suppress
 def main():
     print("Hello from movie-recommendation!")
 
-    with suppress(FileExistsError):
+    with suppress(FileExistsError, KeyboardInterrupt):
         fetch_dataset()
 
 

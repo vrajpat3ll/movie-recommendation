@@ -1,16 +1,25 @@
 [project]
 name = "movie-recommender"
-version = "0.1.0"
+version = "0.1.1"
 description = "A movie recommendation system"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "altair<5",
+    "nltk>=3.9.2",
+    "numpy>=2.4.2",
+    "pandas>=3.0.0",
+    "protobuf==3.20.3",
     "requests>=2.32.5",
     "rich>=14.3.1",
+    "scikit-learn>=1.8.0",
+    "streamlit",
 ]
 
 [dependency-groups]
 dev = [
+    "marimo>=0.19.7",
+    "nbformat>=5.10.4",
     "taskipy>=1.14.1",
 ]
 
