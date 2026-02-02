@@ -80,6 +80,10 @@ new_df = data[["id", "title", "tags"]]
 new_df["tags"] = new_df["tags"].apply(lambda x: " ".join(x).lower())
 
 
+cv = TfidfVectorizer(max_features=5000, stop_words="english")
+ps = PorterStemmer()
+
+
 def stem(text):
     y = []
     for i in text.split():
@@ -89,8 +93,6 @@ def stem(text):
 
 
 new_df["tags"] = new_df["tags"].apply(stem)
-cv = TfidfVectorizer(max_features=5000, stop_words="english")
-ps = PorterStemmer()
 
 vectors = cv.fit_transform(new_df["tags"]).toarray()
 
